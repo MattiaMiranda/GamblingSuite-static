@@ -30,10 +30,10 @@ const translations = {
       cardValues: 'Card Values',
       cardValuesText: 'Numbered cards (2-10): Face value | J, Q, K: 10 | Ace: 1 or 11 (your choice)',
       actions: 'Possible Actions',
-      hit: 'HIT - Ask for another card',
-      stand: 'STAND - Keep current score',
-      double: 'DOUBLE - Double bet and receive exactly one card',
-      split: 'SPLIT - If you have two identical cards, you can split them into two separate hands',
+      hit: 'Ask for another card',
+      stand: 'Keep current score',
+      double: 'Double bet and receive exactly one card',
+      split: 'If you have two identical cards, you can split them into two separate hands',
       basicStrategy: 'Basic Strategy',
       pairs: 'Pairs',
       vs: 'vs',
@@ -105,10 +105,10 @@ const translations = {
       cardValues: 'Valore delle Carte',
       cardValuesText: 'Carte numeriche (2-10): Valore nominale | J, Q, K: 10 | Asso: 1 oppure 11',
       actions: 'Azioni Possibili',
-      hit: 'HIT (Chiamare): Chiedere un\'altra carta',
-      stand: 'STAND (Stare): Tenere il punteggio attuale',
-      double: 'DOUBLE (Raddoppiare): Raddoppiare la puntata e ricevere esattamente una carta',
-      split: 'SPLIT (Sdoppiare): Se hai due carte uguali, puoi dividerle in due mani separate',
+      hit: '(Chiamare): Chiedere un\'altra carta',
+      stand: '(Stare): Tenere il punteggio attuale',
+      double: '(Raddoppiare): Raddoppiare la puntata e ricevere esattamente una carta',
+      split: '(Sdoppiare): Se hai due carte uguali, puoi dividerle in due mani separate',
       basicStrategy: 'Strategia Base',
       pairs: 'Coppie',
       vs: 'Contro',
@@ -219,7 +219,7 @@ function createCard(rank, suit) {
   return `
     <div class="card ${isRed ? 'red' : ''} ${suit.toLowerCase()}">
       <div class="card-suit top">${SUIT_SYMBOLS[suit]}</div>
-      <div class="card-rank">${RANK_DISPLAY[rank]}</div>
+      <div class="card-rank">${getRankDisplay(rank)}</div>
       <div class="card-suit bottom">${SUIT_SYMBOLS[suit]}</div>
     </div>
   `;

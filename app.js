@@ -345,10 +345,10 @@ function attachBlackjackEvents() {
   document.querySelectorAll('.bj-rank-select').forEach(select => {
     select.addEventListener('change', (e) => {
       const idx = parseInt(e.target.dataset.idx);
-      if (idx !== undefined) {
-        appState.blackjack.playerCards[idx].rank = e.target.value;
-      } else {
+      if (isNaN(idx)) {
         appState.blackjack.dealerCard.rank = e.target.value;
+      } else {
+        appState.blackjack.playerCards[idx].rank = e.target.value;
       }
       renderPage();
     });
@@ -357,10 +357,10 @@ function attachBlackjackEvents() {
   document.querySelectorAll('.bj-suit-select').forEach(select => {
     select.addEventListener('change', (e) => {
       const idx = parseInt(e.target.dataset.idx);
-      if (idx !== undefined) {
-        appState.blackjack.playerCards[idx].suit = e.target.value;
-      } else {
+      if (isNaN(idx)) {
         appState.blackjack.dealerCard.suit = e.target.value;
+      } else {
+        appState.blackjack.playerCards[idx].suit = e.target.value;
       }
       renderPage();
     });

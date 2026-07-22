@@ -90,9 +90,6 @@ This application can be deployed to any static hosting service:
 
 No build step required. The application is ready to deploy as-is.
 
-## License
-
-[Add your license here]
 
 ## Contributing
 

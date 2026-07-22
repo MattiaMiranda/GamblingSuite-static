@@ -733,6 +733,109 @@ button.secondary:hover {
   margin: 0 8px;
 }
 
+/* Footer Styles */
+.app-footer {
+  margin-top: 40px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 30px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-content p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-link {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-card-hover);
+  z-index: -1;
+  transition: left 0.3s;
+}
+
+.social-link:hover {
+  color: var(--accent-gold);
+  border-color: var(--accent-gold-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px var(--glow-gold);
+}
+
+.social-link:hover::before {
+  left: 0;
+}
+
+.social-link svg {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s;
+}
+
+.social-link:hover svg {
+  filter: drop-shadow(0 0 8px var(--glow-gold));
+}
+
+.social-link.github:hover {
+  color: #ffffff;
+}
+
+.social-link.linkedin:hover {
+  color: #0A66C2;
+}
+
+.social-link.email:hover {
+  color: #EA4335;
+}
+
 @media (max-width: 768px) {
   .app {
     padding: 15px;
@@ -799,5 +902,28 @@ button.secondary:hover {
   
   .stat .value {
     font-size: 1.8rem;
+  }
+
+  .app-footer {
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .footer-content p {
+    font-size: 0.85rem;
+  }
+
+  .social-links {
+    gap: 15px;
+  }
+
+  .social-link {
+    width: 45px;
+    height: 45px;
+  }
+
+  .social-link svg {
+    width: 20px;
+    height: 20px;
   }
 }
